@@ -1,4 +1,4 @@
-package com.github.alburnus.javastuff.model;
+package com.github.alburnus.javastuff.external;
 
 import lombok.Builder;
 import lombok.Value;
@@ -7,11 +7,11 @@ import java.util.List;
 
 @Builder
 @Value
-public class User {
+public class UserExt {
 
     private String firstName;
 
     private String lastName;
 
-    private List<Role> roles;
+    private List<RoleExt> roles;
 }

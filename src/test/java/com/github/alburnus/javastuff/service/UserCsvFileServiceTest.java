@@ -32,9 +32,11 @@ class UserCsvFileServiceTest {
         String employees = new String(
                 Files.readAllBytes(resourceFile.toPath()));
 
-        User user = new User();
-        user.setFirstName("Adam");
-        user.setLastName("Kowalski");
+        User user = User
+                .builder()
+                .firstName("Adam")
+                .lastName("Kowalski")
+                .build();
 
         // When
         byte[] bytes = userCsvFileService.createFile(user);

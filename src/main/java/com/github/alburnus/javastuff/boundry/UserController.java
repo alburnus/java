@@ -19,9 +19,11 @@ public class UserController {
 
     @GetMapping(value = "user", produces = "text/csv")
     public ResponseEntity<Resource> getUsers() {
-        User user = new User();
-        user.setFirstName("Adam");
-        user.setLastName("Kowalski");
+        User user = User
+                .builder()
+                .firstName("Adam")
+                .lastName("Kowalski")
+                .build();
 
         byte[] data = userCsvFileService.createFile(user);
         return ResponseEntity
